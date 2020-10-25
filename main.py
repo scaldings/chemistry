@@ -1,15 +1,6 @@
 import string
 
 
-def atomova_hmotnost_prvku(prvok: str):
-    file = open('prvky.txt', 'r')
-    prvky, hmotnost = file.read().split('\n'), 0
-    for x in prvky:
-        if str(prvok + ':') in x:
-            hmotnost = float(x.split(':')[1])
-    return hmotnost
-
-
 def cisla():
     return '0123456789'
 
@@ -20,6 +11,15 @@ def male_pismena():
 
 def velke_pismena():
     return string.ascii_uppercase
+
+
+def atomova_hmotnost_prvku(prvok: str):
+    file = open('prvky.txt', 'r')
+    prvky, hmotnost = file.read().split('\n'), 0
+    for x in prvky:
+        if str(prvok + ':') in x:
+            hmotnost = float(x.split(':')[1])
+    return hmotnost
 
 
 def vzorec_do_listu(vzorec: str):
@@ -87,6 +87,7 @@ def main():
     vzorec = str(input('Zadaj vzorec zlúčeniny: '))
     print(zaokruhelnie(hmotnost_zluceniny(vzorec_do_listu(vzorec)), 2))
     main()
+
 
 if __name__ == '__main__':
     main()
