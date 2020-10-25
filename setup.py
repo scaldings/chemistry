@@ -8,5 +8,5 @@ setup(
     license='',
     author='scaldings',
     author_email='',
-    description=''
+    description='A python library related to chemistry.'
 )
