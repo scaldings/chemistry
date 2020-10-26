@@ -23,9 +23,9 @@ def vlastnosti_zluceniny():
     vzorec = str(input('Zadaj vzorec zlúčeniny: '))
     hmotnost_vzorky, celkovy_pocet_castic, objem_roztoku = 0, 0, 0
 
-    pozna_objem_roztoku = input('Poznáš objem látky / roztoku? (A/N)')
-    pozna_hmotnost_vzorky = input('Poznáš hmotnosť vzorky? (A/N)')
-    pozna_celkovy_pocet_castic = input('Poznáš celkový počet častíc? (A/N)')
+    pozna_objem_roztoku = input('Poznáš objem látky / roztoku? (A/N) ')
+    pozna_hmotnost_vzorky = input('Poznáš hmotnosť vzorky? (A/N) ')
+    pozna_celkovy_pocet_castic = input('Poznáš celkový počet častíc? (A/N) ')
 
     if pozna_hmotnost_vzorky == 'A':
         hmotnost_vzorky = float(input('Zadaj hmotnosť vzorky: '))
@@ -92,12 +92,23 @@ def vlastnosti_zluceniny():
     if hmotnost_vzorky != 0:
         print(f'm({vzorec}) = {hmotnost_vzorky}')
         if celkovy_pocet_castic == 0:
-            print(
-                f'n({vzorec}) = {ch.latkove_mnozstvo(hmotnost_vzorky, ch.hmotnost_molekuly(ch.vzorec_do_listu(vzorec)))}')
+            latkove_mnozstvo = ch.latkove_mnozstvo(hmotnost_vzorky, ch.hmotnost_molekuly(ch.vzorec_do_listu(vzorec)))
+            zaokruhlene_latkove_mnozstvo = float(misc.zaokruhelnie(latkove_mnozstvo, 3))
+            print(f'n({vzorec}) = {zaokruhlene_latkove_mnozstvo}')
+            if objem_roztoku != 0:
+                koncentracia = ch.latkova_koncentracia(zaokruhlene_latkove_mnozstvo, objem_roztoku)
+                zaokruhlena_koncentracia = float(misc.zaokruhelnie(koncentracia, 3))
+                print(f'c({vzorec}) = {zaokruhlena_koncentracia}')
     if celkovy_pocet_castic != 0:
         print(f'N({vzorec}) = {celkovy_pocet_castic}')
         if hmotnost_vzorky == 0:
-            print(f'n({vzorec}) = {ch.latkove_mnozstvo2(celkovy_pocet_castic)}')
+            latkove_mnozstvo = ch.latkove_mnozstvo2(celkovy_pocet_castic)
+            zaokruhlene_latkove_mnozstvo = float(misc.zaokruhelnie(latkove_mnozstvo, 3))
+            print(f'n({vzorec}) = {zaokruhlene_latkove_mnozstvo}')
+            if objem_roztoku != 0:
+                koncentracia = ch.latkova_koncentracia(zaokruhlene_latkove_mnozstvo, objem_roztoku)
+                zaokruhlena_koncentracia = float(misc.zaokruhelnie(koncentracia, 3))
+                print(f'c({vzorec}) = {zaokruhlena_koncentracia}')
 
 
 def vlastnosti_prvku():

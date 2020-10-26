@@ -27,6 +27,9 @@ def vzorec_do_listu(vzorec: str):
         final_list.append('1')
         zvysok_molekuly = vzorec
 
+    if zvysok_molekuly[len(zvysok_molekuly) - 1] not in misc.cisla():
+        zvysok_molekuly += '-'
+
     for x in range(0, len(zvysok_molekuly) - 1):
         zvysok_molekuly_list = list(zvysok_molekuly)
         if zvysok_molekuly_list[x] in misc.velke_pismena():
