@@ -10,7 +10,7 @@ F:Fluorum:Fluór:9:18.998
 Ne:Neon:Neón:10:20.180
 Na:Natrium:Sodík:11:22.990
 Mg:Magnesium:Horčík:12:24.305
-Al:Aluminium:Hlník:13:26.982
+Al:Aluminium:Hliník:13:26.982
 Si:Silicium:Kremík:14:28.085
 P:Phosphorus:Fosfor:15:30.974
 S:Sulphur:Síra:16:32.06
