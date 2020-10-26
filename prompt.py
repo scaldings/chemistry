@@ -113,13 +113,19 @@ def vlastnosti_zluceniny():
 
 def vlastnosti_prvku():
     print('Vlastnosti prvku sú: Latinský alebo slovenský názov, značka, protónové číslo alebo atómová hmotnosť.')
-    vlastnost = input('Zadaj vlastnosť prvku: ')
+    vlastnost, informacie = input('Zadaj vlastnosť prvku: '), []
     if misc.cisla() in vlastnost:
         if '.' in vlastnost:
             vlastnost = float(vlastnost)
         else:
             vlastnost = int(vlastnost)
-    informacie = ch.informacie_o_prvku(vlastnost).split(':')
+
+    if ch.informacie_o_prvku(vlastnost) is not None:
+        informacie = ch.informacie_o_prvku(vlastnost).split(':')
+    elif ch.informacie_o_prvku(vlastnost) is None:
+        print('Neplatny prvok!\n')
+        main()
+
     print(f'\nSlovenský názov: {informacie[2]}')
     print(f'Latiský názov: {informacie[1]}')
     print(f'Značka: {informacie[0]}')

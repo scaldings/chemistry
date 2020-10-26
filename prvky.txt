@@ -5,7 +5,7 @@ Be:Beryllium:Berýlium:4:9.0122
 B:Borum:Bór:5:10.81
 C:Carboneum:Uhlík:6:12.011
 N:Nitrogenium:Dusík:7:14.007
-O:Oygenium:Kyslík:8:15.999
+O:Oxygenium:Kyslík:8:15.999
 F:Fluorum:Fluór:9:18.998
 Ne:Neon:Neón:10:20.180
 Na:Natrium:Sodík:11:22.990

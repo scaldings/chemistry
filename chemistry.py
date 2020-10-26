@@ -6,15 +6,10 @@ def informacie_o_prvku(vlastnost):
     file = open('prvky.txt', 'r', encoding='utf-8')
     prvky = file.read().split('\n')
     for x in prvky:
-        if type(vlastnost) is str:
-            if str(vlastnost + ':') in x:
-                return x
-        elif type(vlastnost) is float:
-            if str(vlastnost) in x:
-                return x
-        elif type(vlastnost) is int:
-            if str(vlastnost + ':') in x:
-                return x
+        if str(vlastnost + ':') in x:
+            return x
+        if ':' + str(vlastnost) in x:
+            return x
     return None
 
 
