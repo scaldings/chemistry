@@ -75,7 +75,7 @@ def vlastnosti_zluceniny():
                 objem_roztoku = float(input('Zadaj objem látky / roztoku: '))
             elif pozna_objem_roztoku == 'N':
                 print(f'\nM({vzorec}) = {misc.zaokruhelnie(ch.hmotnost_molekuly(ch.vzorec_do_listu(vzorec)), 2)}')
-                print('Nedá sa poskytnúť viac informácií.')
+                print('Nedá sa poskytnúť viac informácií.\n')
                 main()
             else:
                 print('Neplatný príkaz!')
@@ -121,7 +121,8 @@ def vlastnosti_prvku():
             vlastnost = int(vlastnost)
 
     if ch.informacie_o_prvku(vlastnost) is not None:
-        informacie = ch.informacie_o_prvku(vlastnost).split(':')
+        informacie = ch.informacie_o_prvku(vlastnost)
+        informacie = ch.informacie_o_prvku(vlastnost)
     elif ch.informacie_o_prvku(vlastnost) is None:
         print('Neplatny prvok!\n')
         main()

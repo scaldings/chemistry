@@ -1,16 +1,12 @@
 import misc
 import prompt
+import database
 
 
 def informacie_o_prvku(vlastnost):
-    file = open('prvky.txt', 'r', encoding='utf-8')
-    prvky = file.read().split('\n')
-    for x in prvky:
-        if str(vlastnost + ':') in x:
+    for x in database.information_to_list():
+        if vlastnost in x:
             return x
-        if ':' + str(vlastnost) in x:
-            return x
-    return None
 
 
 def vzorec_do_listu(vzorec: str):
@@ -59,13 +55,13 @@ def hmotnost_molekuly(molekula: list):
                     pocet_atomov = int(x[2:])
                 else:
                     pocet_atomov = 1
-                hmotnost += float(pocet_atomov) * float(informacie_o_prvku(x[:2]).split(':')[4])
+                hmotnost += float(pocet_atomov) * float(informacie_o_prvku(x[:2])[4])
             else:
                 if x in misc.cisla():
                     pocet_atomov = int(x[1:])
                 else:
                     pocet_atomov = 1
-                hmotnost += float(pocet_atomov) * float(informacie_o_prvku(x[:1]).split(':')[4])
+                hmotnost += float(pocet_atomov) * float(informacie_o_prvku(x[:1])[4])
         i += 1
     return hmotnost * float(pocet_molekul)
 
@@ -83,4 +79,5 @@ def latkova_koncentracia(latkove_mnoz: float, objem: float):
 
 
 if __name__ == '__main__':
+    database.init_db()
     prompt.main()
