@@ -127,8 +127,4 @@ def vlastnosti_prvku():
         print('Neplatny prvok!\n')
         main()
 
-    print(f'\nSlovenský názov: {informacie[2]}')
-    print(f'Latinský názov: {informacie[1]}')
-    print(f'Značka: {informacie[0]}')
-    print(f'Protónové číslo: {informacie[3]}')
-    print(f'Atómová hmostnosť: {informacie[4]}\n')
+    

@@ -1,6 +1,7 @@
 import misc
 import prompt
 import database
+import gui
 
 
 def informacie_o_prvku(vlastnost):
@@ -80,4 +81,5 @@ def latkova_koncentracia(latkove_mnoz: float, objem: float):
 
 if __name__ == '__main__':
     database.init_db()
-    prompt.main()
+    # prompt.main()
+    gui.main()
